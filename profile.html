@@ -17,7 +17,7 @@
 				style.push(document.getElementById('style'+i));
 				style[i-1].onclick=function(i){		//利用立即执行函数创建简单的闭包来传递i；
 											function clickToChangeStyle(){
-												link.href="../三个简历/style_"+i+".min.css";
+												link.href="style_"+i+".min.css";
 												console.log(link.href);
 											}
 										return clickToChangeStyle;
