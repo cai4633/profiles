@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<title>个人简历</title>
+	<style type="text/css" >
+		
+	</style>
+	<link  id="link" rel="stylesheet" type="text/css" href="style_1.min.css"/>
+	<script type="text/javascript">
+		window.onload=function(){
+			var style=[],
+				link=document.getElementById('link');
+
+			//为button绑定点击函数；
+			for(var i=1;i<4;i++){
+				style.push(document.getElementById('style'+i));
+				style[i-1].onclick=function(i){		//利用立即执行函数创建简单的闭包来传递i；
+											function clickToChangeStyle(){
+												link.href="../三个简历/style_"+i+".min.css";
+												console.log(link.href);
+											}
+										return clickToChangeStyle;
+				}(i);
+			}
+		}
+	</script>
+</head>
+<body>
+	<div class="toolBox">
+		<button id="style1">style1</button>
+		<button id="style2">style2</button>
+		<button id="style3">style3</button>
+	</div>
+	<div class="container">
+		<header>
+			<h1>简历</h1>
+		</header>
+		<main>
+			<div class="essential-imformation title"> <!--  基本信息 -->
+					<h2>基本信息</h2>
+					<div class="essential-imformation content">
+							<label>姓名</label><span>Mr chen</span>
+							<label>性别</label><span>男</span>
+							<label>应聘职位</label><span>web前端开发</span>
+					</div>
+			</div>
+			
+			<div class="contact title"><!-- 联系方式 -->
+					<h2>联系方式</h2>
+					<div class="contact content">
+							<label>电话</label><span>13845767532</span>
+							<label>邮箱</label><span><a href="mailto:jd@139.com">jd@139.com</a></span>
+							<label>个人主页</label><span><a href="">github.com</a></span>
+					</div>
+			</div>	
+			
+			<div class="ability title"><!-- 能力和描述 -->
+					<h2>能力和描述</h2>
+					<div class="ability content">
+							<label>技术能力</label><span>熟练掌握html,css,javascript</span>
+							<label>综合能力</label><span>良好的沟通，主动积极，努力勤奋</span>
+					</div>
+			</div>
+			
+			<div class="education title"><!-- 教育经历 -->
+					<h2>教育经历</h2>
+					<div class="education content">
+							<label>本科</label><span>百度前端技术学院小微课堂</span>
+							<label>研究生</label><span>百度前端技术学院小斌课堂</span>
+					</div>
+			</div>	
+			
+			<div class="project title"><!-- 项目经历 -->
+					<h2>项目经历</h2>
+					<div class="project content">
+							<label>小度小度</label><span>作为前端工程师角色参与ABC组件开发</span>
+							<label>SAN DOC</label><span>作为文档工程师参与了SAN DOC的编写</span>
+					</div>
+			</div>
+		</main>
+	</div>
+
+</body>
+</html>
